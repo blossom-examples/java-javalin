@@ -19,7 +19,10 @@ public class App {
 
         // API Routes
         app.get("/api/hello", ctx -> {
-            String name = ctx.queryParam("name", "World");
+            String name = ctx.queryParam("name");
+            if (name == null || name.isEmpty()) {
+                name = "World";
+            }
             Map<String, Object> response = new HashMap<>();
             response.put("message", String.format("Hello, %s!", name));
             response.put("timestamp", Instant.now().toString());

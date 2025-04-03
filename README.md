@@ -6,7 +6,7 @@ A ready-to-deploy Java Javalin app to get you started quickly on [Blossom](https
 
 ```bash
 # Install dependencies and build
-./mvnw clean package
+mvn clean package
 
 # Run the app
 java -jar target/javalin-demo-1.0-SNAPSHOT.jar
