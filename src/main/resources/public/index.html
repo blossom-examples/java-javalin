@@ -101,13 +101,14 @@
       const resultDiv = document.getElementById('echoResult');
 
       try {
+        const message = messageInput.value || messageInput.placeholder;
         const response = await fetch('/api/echo', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: messageInput.value
+            message: message
           }),
         });
 
